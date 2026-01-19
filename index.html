@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGNITE - Pre-Workout Energy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --sunshine: #FFD93D;
+            --warm-yellow: #FFF4B8;
+            --deep-navy: #1a1a2e;
+            --hot-pink: #FF1493;
+            --electric-blue: #00D4FF;
+            --off-white: #FFFEF7;
+            --text-dark: #1a1a2e;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--warm-yellow);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Scrolling Banner */
+        .top-banner {
+            background: var(--deep-navy);
+            color: white;
+            padding: 12px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .banner-track {
+            display: flex;
+            animation: scroll 25s linear infinite;
+        }
+
+        .banner-text {
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .banner-text span {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .banner-text span::before {
+            content: "★";
+            color: var(--sunshine);
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: var(--warm-yellow);
+        }
+
+        .logo {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 32px;
+            color: var(--deep-navy);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--hot-pink);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--hot-pink);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .cart-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .cart-icon {
+            position: relative;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--hot-pink);
+            color: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .nav-cta {
+            background: var(--deep-navy);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--hot-pink);
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 60px 60px 0;
+            min-height: calc(100vh - 120px);
+            background: var(--warm-yellow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 10;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(48px, 7vw, 80px);
+            font-weight: 900;
+            line-height: 1.0;
+            text-transform: uppercase;
+            font-style: italic;
+            margin-bottom: 40px;
+            color: var(--deep-navy);
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge-icon {
+            width: 56px;
+            height: 56px;
+            border: 2px solid var(--deep-navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .badge-label {
+            font-size: 12px;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            line-height: 1.6;
+            color: rgba(26, 26, 46, 0.7);
+            max-width: 420px;
+            margin-bottom: 40px;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .btn-primary {
+            background: var(--deep-navy);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background: var(--hot-pink);
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            background: #FFB8B8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .contact-text span {
+            display: block;
+            font-size: 13px;
+            color: rgba(26, 26, 46, 0.6);
+        }
+
+        .contact-text a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Hero Image */
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 100%;
+        }
+
+        .product-image {
+            max-width: 420px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 30px 60px rgba(0,0,0,0.15));
+            animation: gentleFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            padding: 60px;
+            background: var(--deep-navy);
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+
+        .stat-number {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 48px;
+            color: var(--sunshine);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 60px;
+            background: var(--off-white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--hot-pink);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 900;
+            font-style: italic;
+            color: var(--deep-navy);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px 32px;
+            text-align: center;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--warm-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 24px;
+        }
+
+        .feature-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--deep-navy);
+        }
+
+        .feature-text {
+            color: rgba(26, 26, 46, 0.6);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 100px 60px;
+            background: var(--warm-yellow);
+        }
+
+        .benefits-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefits-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .benefits-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 900;
+            font-style: italic;
+            margin-bottom: 24px;
+            color: var(--deep-navy);
+        }
+
+        .benefits-text h2 span {
+            color: var(--hot-pink);
+        }
+
+        .benefits-description {
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(26, 26, 46, 0.7);
+            margin-bottom: 32px;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            background: white;
+            border-radius: 12px;
+        }
+
+        .benefit-check {
+            width: 28px;
+            height: 28px;
+            background: var(--sunshine);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .benefit-item span {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 60px;
+            background: var(--off-white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 24px;
+            padding: 36px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+        }
+
+        .testimonial-stars {
+            color: var(--sunshine);
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-name {
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .author-title {
+            font-size: 13px;
+            color: rgba(26, 26, 46, 0.5);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 60px;
+            background: var(--warm-yellow);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .contact-info-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 900;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--deep-navy);
+        }
+
+        .contact-info-section h2 span {
+            color: var(--hot-pink);
+        }
+
+        .contact-description {
+            font-size: 17px;
+            line-height: 1.7;
+            color: rgba(26, 26, 46, 0.7);
+            margin-bottom: 36px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .contact-detail-icon {
+            width: 52px;
+            height: 52px;
+            background: white;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .contact-detail-text span {
+            display: block;
+            font-size: 13px;
+            color: rgba(26, 26, 46, 0.5);
+            margin-bottom: 2px;
+        }
+
+        .contact-detail-text a,
+        .contact-detail-text p {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-decoration: none;
+            margin: 0;
+        }
+
+        .contact-form {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px 20px;
+            background: #F8F8F8;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--hot-pink);
+            background: white;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--deep-navy);
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background: var(--hot-pink);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 60px;
+            background: var(--deep-navy);
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(36px, 5vw, 64px);
+            color: white;
+            font-weight: 900;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .cta h2 span {
+            color: var(--sunshine);
+        }
+
+        .cta p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.7);
+            max-width: 500px;
+            margin: 0 auto 36px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--sunshine);
+            color: var(--deep-navy);
+            padding: 20px 48px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 60px;
+            background: var(--deep-navy);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 24px;
+            color: white;
+        }
+
+        .footer-logo span {
+            color: var(--sunshine);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--sunshine);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--sunshine);
+            color: var(--deep-navy);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 40px 40px 0;
+            }
+
+            .hero-content {
+                order: 2;
+            }
+
+            .hero-image {
+                order: 1;
+                margin-bottom: 40px;
+                justify-content: center;
+            }
+
+            .product-image {
+                max-width: 300px;
+            }
+
+            .hero-description {
+                margin: 0 auto 40px;
+            }
+
+            .hero-actions {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .trust-badges {
+                justify-content: center;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-content,
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 16px 24px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero,
+            .features,
+            .benefits,
+            .testimonials,
+            .contact,
+            .cta {
+                padding: 60px 24px;
+            }
+
+            .stats {
+                padding: 40px 24px;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scrolling Banner -->
+    <div class="top-banner">
+        <div class="banner-track">
+            <div class="banner-text">
+                <span>100% Money Back Guarantee</span>
+                <span>Free Shipping on Orders $50+</span>
+                <span>100% Money Back Guarantee</span>
+                <span>Free Shipping on Orders $50+</span>
+                <span>100% Money Back Guarantee</span>
+                <span>Free Shipping on Orders $50+</span>
+                <span>100% Money Back Guarantee</span>
+                <span>Free Shipping on Orders $50+</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">IGNITE<span>⚡</span></a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">FAQs</a></li>
+        </ul>
+        <div class="nav-right">
+            <a href="#" class="cart-link">
+                <div class="cart-icon">
+                    🛒
+                    <span class="cart-badge">0</span>
+                </div>
+                My Cart
+            </a>
+            <a href="#" class="nav-cta">Order Now !!</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Unleash Peak Performance</h1>
+
+            <div class="trust-badges">
+                <div class="badge">
+                    <div class="badge-icon">NO<br>GMO</div>
+                    <span class="badge-label">Non-GMO</span>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon">Made<br>in USA</div>
+                    <span class="badge-label">Made in the USA</span>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon">✓</div>
+                    <span class="badge-label">100% Tested</span>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon">🐰</div>
+                    <span class="badge-label">Cruelty Free</span>
+                </div>
+            </div>
+
+            <p class="hero-description">
+                Crush your PRs and power through every workout with our scientifically formulated pre-workout. Energy, focus, and endurance in every can.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#" class="btn-primary">Order Now !!</a>
+                <div class="contact-info">
+                    <div class="contact-icon">😊</div>
+                    <div class="contact-text">
+                        <span>Need Help?</span>
+                        <a href="mailto:hello@drinkignite.com">hello@drinkignite.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="images/ignite-can.png" alt="IGNITE Pre-Workout Energy Drink" class="product-image">
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stat-item">
+            <div class="stat-number">200mg</div>
+            <div class="stat-label">Clean Caffeine</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">0g</div>
+            <div class="stat-label">Sugar</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">3.2g</div>
+            <div class="stat-label">Beta-Alanine</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">6g</div>
+            <div class="stat-label">L-Citrulline</div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <span class="section-tag">Why Choose Ignite</span>
+            <h2 class="section-title">Engineered for Champions</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Explosive Energy</h3>
+                <p class="feature-text">200mg of clean caffeine plus L-theanine for smooth, sustained energy without jitters or crash.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">Laser Focus</h3>
+                <p class="feature-text">Alpha-GPC sharpens mental clarity, helping you lock in on every rep and crush your goals.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💪</div>
+                <h3 class="feature-title">Insane Pumps</h3>
+                <p class="feature-text">6g of L-Citrulline boosts nitric oxide for skin-splitting pumps and enhanced blood flow.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔥</div>
+                <h3 class="feature-title">Max Endurance</h3>
+                <p class="feature-text">Beta-alanine buffers lactic acid, delaying fatigue so you can push harder, longer.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧪</div>
+                <h3 class="feature-title">Clinically Dosed</h3>
+                <p class="feature-text">Every ingredient at research-backed doses. No proprietary blends, no hidden fillers.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌿</div>
+                <h3 class="feature-title">Clean Formula</h3>
+                <p class="feature-text">Zero sugar, naturally sweetened. Keto-friendly and vegan. Made in the USA.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="benefits-content">
+            <div class="benefits-image">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=500&fit=crop" alt="Athlete Training">
+            </div>
+            <div class="benefits-text">
+                <h2>Fuel Your <span>Beast Mode</span></h2>
+                <p class="benefits-description">
+                    Whether you're hitting PRs, crushing HIIT, or dominating competition, IGNITE delivers the energy and focus you need to perform at your absolute best.
+                </p>
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <div class="benefit-check">✓</div>
+                        <span>L-Citrulline 6g</span>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-check">✓</div>
+                        <span>Beta-Alanine 3.2g</span>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-check">✓</div>
+                        <span>Caffeine 200mg</span>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-check">✓</div>
+                        <span>L-Theanine 100mg</span>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-check">✓</div>
+                        <span>Alpha-GPC 300mg</span>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-check">✓</div>
+                        <span>Tyrosine 500mg</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="reviews">
+        <div class="section-header">
+            <span class="section-tag">Customer Reviews</span>
+            <h2 class="section-title">Trusted by Athletes</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Best pre-workout I've ever tried. The energy is clean, the focus is real, and I've hit PRs every week since I started using IGNITE."</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Marcus J." class="author-avatar">
+                    <div>
+                        <div class="author-name">Marcus J.</div>
+                        <div class="author-title">CrossFit Athlete</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"No jitters, no crash—just pure, sustained energy. The tropical flavor is incredible too. This is my go-to before every session."</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Sarah K." class="author-avatar">
+                    <div>
+                        <div class="author-name">Sarah K.</div>
+                        <div class="author-title">Fitness Coach</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"I've tried them all. IGNITE is different—clinically dosed, transparent label, and it actually works. Worth every penny."</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face" alt="David R." class="author-avatar">
+                    <div>
+                        <div class="author-name">David R.</div>
+                        <div class="author-title">Bodybuilder</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-wrapper">
+            <div class="contact-info-section">
+                <h2>Let's <span>Connect</span></h2>
+                <p class="contact-description">
+                    Have questions about our products? Want to become a retail partner? We'd love to hear from you.
+                </p>
+                <div class="contact-details">
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">📧</div>
+                        <div class="contact-detail-text">
+                            <span>Email Us</span>
+                            <a href="mailto:hello@drinkignite.com">hello@drinkignite.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">📞</div>
+                        <div class="contact-detail-text">
+                            <span>Call Us</span>
+                            <a href="tel:+18001234567">1-800-123-4567</a>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">📍</div>
+                        <div class="contact-detail-text">
+                            <span>Visit Us</span>
+                            <p>Miami, FL 33101</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Tell us what's on your mind..."></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2>Ready to <span>Level Up?</span></h2>
+        <p>Join thousands of athletes who trust IGNITE to power their performance.</p>
+        <a href="#" class="cta-btn">
+            Shop Now
+            <span>→</span>
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">IGNITE<span>⚡</span></div>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Shipping Info</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+            <div class="footer-social">
+                <a href="#">IG</a>
+                <a href="#">TW</a>
+                <a href="#">YT</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
